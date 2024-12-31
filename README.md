@@ -1,4 +1,4 @@
-# Deploy SSH rsync Action".
+# Deploy SSH rsync Action.
 
 This GitHub Action project is designed to send and synchronize files from your GitHub repository to a remote server using SSH and rsync. These files can either be processed within GitHub Actions beforehand or sent directly from your repository.
 
@@ -14,6 +14,8 @@ In simple terms, this code connects to your server via SSH, executes rsync with 
 - `REMOTE_PATH` - The directory path to synchronize. Make sure to verify the location from which the SSH connection is established.
 
 - `REMOTE_USER` - The username for connecting to your remote server via SSH.
+
+- `REMOTE_PASSWORD` - The password for connecting to your remote server via SSH.
 
 - `REMOTE_SSH_KEY` - The private SSH key. Remember, it must be properly linked to your remote server.
 
@@ -43,7 +45,7 @@ Example: `-rvaz --delete`
 --recursive, -r       recurse into directories
 --exclude=PATTERN     exclude files matching PATTERN
 --exclude-from=FILE   read exclude patterns from FILE
---include=PATTERN     don't exclude files matching PATTERN
+--include=PATTERN     dont exclude files matching PATTERN
 --include-from=FILE   read include patterns from FILE
 --filter=RULE, -f     add a file-filtering RULE
 --delete              delete extraneous files from dest dirs
@@ -68,6 +70,7 @@ We recommend using these secrets for all sensitive information:
 
 - Host  
 - User  
+- Password  
 - Port  
 - Remote Path  
 - SSH Key  
@@ -94,11 +97,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action.
-      uses: chrisconh/deploy-sftp-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@0.1
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
         REMOTE_USER: ${ secrets.REMOTE_USER }
+        REMOTE_PASSWORD: ${ secrets.REMOTE_PASSWORD }
         REMOTE_KEY: ${ secrets.REMOTE_SSH_KEY }
         REMOTE_PATH: ${ secrets.REMOTE_PATH }
         LOCAL_PATH: /
@@ -120,11 +124,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action.
-      uses: chrisconh/deploy-sftp-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@0.1
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
         REMOTE_USER: ${ secrets.REMOTE_USER }
+        REMOTE_PASSWORD: ${ secrets.REMOTE_PASSWORD }
         REMOTE_KEY: ${ secrets.REMOTE_SSH_KEY }
         REMOTE_PATH: ${ secrets.REMOTE_PATH }
         LOCAL_PATH: /
@@ -146,11 +151,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action
-      uses: chrisconh/deploy-sftp-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@0.1
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
         REMOTE_USER: ${ secrets.REMOTE_USER }
+        REMOTE_PASSWORD: ${ secrets.REMOTE_PASSWORD }
         REMOTE_SSH_KEY: ${ secrets.REMOTE_SSH_KEY }
         REMOTE_SSH_KEY_PASS: ${ secrets.REMOTE_SSH_KEY_PASS }
         REMOTE_PATH: ${ secrets.REMOTE_PATH }
