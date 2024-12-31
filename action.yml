@@ -2,7 +2,7 @@ name: "Deploy SSH rsync Action"
 description: "Deploy your project via SSH with rsync"
 inputs:
   REMOTE_HOST:
-    description: "The IP address or hostname of your remote server. For example, 1.1.1.1 or host.example.com"
+    description: "The IP address or hostname of your remote server."
     required: true
   REMOTE_PORT:
     description: "The port of your remote server. By default, port 22 is used, but this may vary depending on your provider."
