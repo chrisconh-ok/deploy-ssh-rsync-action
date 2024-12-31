@@ -1,0 +1,36 @@
+name: "Deploy SSH rsync Action"
+description: "Deploy your project via SSH with rsync"
+inputs:
+  REMOTE_HOST:
+    description: "The IP address or hostname of your remote server. For example, 1.1.1.1 or host.example.com"
+    required: true
+  REMOTE_PORT:
+    description: "The port of your remote server. By default, port 22 is used, but this may vary depending on your provider."
+    required: false
+    default: 22
+  REMOTE_PATH:
+    description: "The directory path to synchronize. Make sure to verify the location from which the SSH connection is established."
+    required: true
+  REMOTE_USER:
+    description: "The username for connecting to your remote server via SSH."
+    required: true
+  REMOTE_SSH_KEY:
+    description: "The private SSH key. Remember, it must be properly linked to your remote server."
+    required: true
+  REMOTE_SSH_KEY_PASS:
+    description: "If your SSH key has an associated passphrase, remember to add it."
+    required: false
+    default: ""
+  LOCAL_PATH:
+    description: "The local directory from which the files will be synchronized to the remote folder."
+    required: true
+  RSYNC_OPTIONS:
+    description: "Here you should enter the rsync options that are necessary for your specific use case."
+    required: true
+  EXTRA_SHELL_COMMANDS:
+    description: "Here you should enter the rsync options that are necessary for your specific use case"
+    required: false
+    default: ""
+runs:
+  using: "docker"
+  image: "Dockerfile"
