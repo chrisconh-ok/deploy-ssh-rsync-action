@@ -156,7 +156,6 @@ jobs:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
         REMOTE_USER: ${ secrets.REMOTE_USER }
-        REMOTE_PASSWORD: ${ secrets.REMOTE_PASSWORD }
         REMOTE_SSH_KEY: ${ secrets.REMOTE_SSH_KEY }
         REMOTE_SSH_KEY_PASS: ${ secrets.REMOTE_SSH_KEY_PASS }
         REMOTE_PATH: ${ secrets.REMOTE_PATH }
