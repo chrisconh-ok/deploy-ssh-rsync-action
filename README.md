@@ -15,12 +15,12 @@ In simple terms, this code connects to your server via SSH, executes rsync with 
 
 - `REMOTE_USER` - The username for connecting to your remote server via SSH.
 
-- `REMOTE_PASSWORD` - The password for connecting to your remote server via SSH.
-
 - `REMOTE_SSH_KEY` - The private SSH key. Remember, it must be properly linked to your remote server.
 
 
 ## Remote info (optional)
+
+- `REMOTE_PASSWORD` - The password for connecting to your remote server via SSH.
 
 - `REMOTE_SSH_KEY_PASS` - If your SSH key has an associated passphrase, remember to add it.
 
@@ -97,7 +97,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action.
-      uses: chrisconh/deploy-ssh-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@1.0
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
@@ -124,7 +124,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action.
-      uses: chrisconh/deploy-ssh-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@1.0
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
@@ -151,7 +151,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy SSH rsync Action
-      uses: chrisconh/deploy-ssh-rsync-action@0.1
+      uses: chrisconh/deploy-ssh-rsync-action@1.0
       with:
         REMOTE_HOST: ${ secrets.REMOTE_HOST }
         REMOTE_PORT: ${ secrets.REMOTE_PORT }
