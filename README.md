@@ -1,6 +1,6 @@
 # Deploy SSH rsync Action".
 
-This GitHub Action project is designed to send and synchronize files from your GitHub repository to a remote server using SFTP and rsync. These files can either be processed within GitHub Actions beforehand or sent directly from your repository.
+This GitHub Action project is designed to send and synchronize files from your GitHub repository to a remote server using SSH and rsync. These files can either be processed within GitHub Actions beforehand or sent directly from your repository.
 
 In simple terms, this code connects to your server via SSH, executes rsync with the extra options you specify, and your files are successfully transferred to your remote server.
 
